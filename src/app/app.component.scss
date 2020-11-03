@@ -1,12 +1,23 @@
 .app-container {
   .main-title {
-    .virus-img {
-      width: 200px;
+    &-image {
+      @media(max-width: 767px) {
+        justify-content: center;
+        display: flex;
+      }
+
+      .virus-img {
+        width: 200px;
+      }
     }
 
-    .title {
+    &-text {
       display: flex;
       align-items: center;
+
+      @media(max-width: 767px) {
+        text-align: center;
+      }
     }
   }
 }
