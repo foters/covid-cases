@@ -11,10 +11,12 @@ export class CovidComponent implements OnInit {
 
   @Input() covid: any;
   continentsCovid: any;
+  countryCovid: any;
 
   apiError: Object;
   showApiError: boolean;
   showContinentsReport: boolean;
+  showCountryReport: boolean;
 
   continents = [
     {
@@ -53,6 +55,25 @@ export class CovidComponent implements OnInit {
           console.log(typeof err);
 
           this.showContinentsReport = false;
+          this.apiError = err;
+          err.status === 404 ? this.showApiError = true : false;
+        }
+      );
+    } else {
+      this.showContinentsReport = false;
+    }
+  }
+
+  searchCountryCovid(event: any) {
+    if (event.target.value !== '') {
+      this.appService.getAllCountryCovid(event.target.value).subscribe(
+        (res) => {
+          this.countryCovid = res;
+          this.showCountryReport = true;
+          this.showApiError = false;
+        },
+        (err) => {
+          this.showCountryReport = false;
           this.apiError = err;
           err.status === 404 ? this.showApiError = true : false;
         }

@@ -23,4 +23,8 @@ export class AppService {
   getAllContinentCovid(continent: string) {
     return this.http.get(this.baseUrl + '/v3/covid-19/continents/' + continent);
   }
+
+  getAllCountryCovid(country: string) {
+    return this.http.get(this.baseUrl + '/v3/covid-19/countries/' + country);
+  }
 }

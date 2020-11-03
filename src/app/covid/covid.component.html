@@ -14,11 +14,11 @@
       <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value}}</option>
     </select>
     <div *ngIf="showContinentsReport">
-      <p>Total cases: {{covid.cases}}</p>
-      <p>Today cases: {{covid.todayCases}}</p>
-      <p>Deaths: {{covid.deaths}}</p>
-      <p>Total recovered: {{covid.recovered}}</p>
-      <p>Today recovered: {{covid.todayRecovered}}</p>
+      <p>Total cases: {{continentsCovid.cases}}</p>
+      <p>Today cases: {{continentsCovid.todayCases}}</p>
+      <p>Deaths: {{continentsCovid.deaths}}</p>
+      <p>Total recovered: {{continentsCovid.recovered}}</p>
+      <p>Today recovered: {{continentsCovid.todayRecovered}}</p>
     </div>
     <div *ngIf="showApiError">
       {{apiError.error.message}}
