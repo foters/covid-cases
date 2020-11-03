@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { AppService } from './app.service';
+import { ICovid } from './covid/interfaces/covid';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,9 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   title = 'covid-cases';
 
-  covid: any;
+  covid: ICovid;
 
-  constructor(private appService: AppService, private ngZone: NgZone) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
     this.getData();
