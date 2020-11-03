@@ -14,19 +14,17 @@ export class AppComponent implements OnInit {
   constructor(private appService: AppService, private ngZone: NgZone) { }
 
   ngOnInit() {
+    this.getData();
+    setInterval(() => {
+      this.getData()
+    }, 600000)
+  }
+
+  getData() {
     this.appService.getAllCovid().subscribe(
-      async (res) => {
-        // debugger;
-        console.log(res);
-        this.ngZone.run(() => {
-          this.covid = res;
-        })
-      },
-      async (error) => {
-        console.log(error);
-      }
+      (res) => this.covid = res,
+      (error) => console.log(error)
     )
-    console.log('COVIDDI: ', this.covid);
   }
 
 

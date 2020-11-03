@@ -11,7 +11,6 @@ export class CovidComponent implements OnInit {
   @Input() covid: any;
 
   ngOnInit() {
-    console.log('covid: ', this.covid);
   }
 
 }

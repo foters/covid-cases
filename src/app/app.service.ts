@@ -13,11 +13,11 @@ export interface UserLoginBody {
 })
 export class AppService {
 
+  baseUrl = 'https://disease.sh';
   allCovid: any;
 
   constructor(private http: HttpClient) { }
   getAllCovid(): Observable<any> {
-    const url = 'https://disease.sh/v3/covid-19/all';
-    return this.http.get(url);
+    return this.http.get(this.baseUrl + '/v3/covid-19/all');
   }
 }
