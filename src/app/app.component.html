@@ -9,10 +9,9 @@
 
 <style>
 </style>
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  hi there
+<div *ngIf="covid">
+  <app-covid [covid]="covid"></app-covid>
 </div>
 
-<router-outlet></router-outlet>
+<!-- Toolbar -->
+<!-- <router-outlet></router-outlet> -->
