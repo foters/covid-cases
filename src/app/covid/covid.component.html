@@ -29,7 +29,8 @@
 
   <div class="data-container-continent" class="form-group mt-5">
     <h2>Search for a continent</h2>
-    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)" class="form-control">
+    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)"
+      class="form-control continent-select">
       <option value="select-option">Select an option</option>
       <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value}}</option>
     </select>
