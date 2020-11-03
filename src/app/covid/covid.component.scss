@@ -1,0 +1,9 @@
+.continent-select {
+  box-shadow: none;
+  outline: none;
+
+  &:focus {
+    border: 1px solid #ced4da;
+    outline: none;
+  }
+}

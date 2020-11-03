@@ -28,13 +28,21 @@
   </div>
 
   <div class="data-container-continent" class="form-group mt-5">
-    <h2>Search for a continent</h2>
-    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)" class="form-control">
-      <option value="select-option">Select an option</option>
-      <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value}}</option>
-    </select>
+    <div class="row">
+      <div class="col-12 col-md-auto">
+        <h2>Search for a continent</h2>
+      </div>
+      <div class="col-md-3">
+        <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)"
+          class="form-control continent-select mb-2">
+          <option value="select-option">Select an option</option>
+          <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value | titlecase}}
+          </option>
+        </select>
+      </div>
+    </div>
     <div *ngIf="showContinentsReport">
-      <table class="table global-table">
+      <table class="table continents-table">
         <tbody>
           <tr>
             <td>Cases:</td>

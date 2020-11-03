@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
+import { ICovid } from './interfaces/covid';
 
 @Component({
   selector: 'app-covid',
@@ -8,11 +10,11 @@ import { AppService } from '../app.service';
 })
 export class CovidComponent implements OnInit {
 
-  @Input() covid: any;
-  continentsCovid: any;
-  countryCovid: any;
+  @Input() covid: ICovid;
+  continentsCovid: ICovid;
+  countryCovid: ICovid;
 
-  apiError: any;
+  apiError: HttpErrorResponse;
   showApiError: boolean;
   showContinentsReport: boolean;
   showCountryReport: boolean;
@@ -45,12 +47,12 @@ export class CovidComponent implements OnInit {
   searchContinentCovid(event: any) {
     if (event.target.value !== 'select-option') {
       this.appService.getAllContinentCovid(event.target.value).subscribe(
-        (res) => {
+        (res: ICovid) => {
           this.continentsCovid = res;
           this.showContinentsReport = true;
           this.showApiError = false;
         },
-        (err) => {
+        (err: HttpErrorResponse) => {
           this.showContinentsReport = false;
           this.apiError = err;
           err.status === 404 ? this.showApiError = true : false;
@@ -64,12 +66,12 @@ export class CovidComponent implements OnInit {
   searchCountryCovid(event: any) {
     if (event.target.value !== '') {
       this.appService.getAllCountryCovid(event.target.value).subscribe(
-        (res) => {
+        (res: ICovid) => {
           this.countryCovid = res;
           this.showCountryReport = true;
           this.showApiError = false;
         },
-        (err) => {
+        (err: HttpErrorResponse) => {
           this.showCountryReport = false;
           this.apiError = err;
           err.status === 404 ? this.showApiError = true : false;
