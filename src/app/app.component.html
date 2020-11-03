@@ -1,17 +1,19 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-</style>
-<div *ngIf="covid">
-  <app-covid [covid]="covid"></app-covid>
+<div class="app-container">
+  <div class="container">
+    <div class="row main-title">
+      <div class="col-auto">
+        <img src="../assets/imgs/virus.svg" alt="virus image" class="virus-img">
+      </div>
+      <div class="col title">
+        <h1>COVID-19 WORLD SITUATION</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div *ngIf="covid">
+          <app-covid [covid]="covid"></app-covid>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- Toolbar -->
-<!-- <router-outlet></router-outlet> -->

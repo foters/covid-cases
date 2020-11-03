@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   getData() {
     this.appService.getAllCovid().subscribe(
       (res) => this.covid = res,
-      (error) => console.log(error)
+      (err) => console.info(err)
     )
   }
 

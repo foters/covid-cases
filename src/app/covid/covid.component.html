@@ -1,27 +1,65 @@
-<div class="data-container">
+<div class="data-container mt-5">
   <div class="data-container-global">
     <h2>Global report</h2>
-    <p>Cases: {{covid.cases}}</p>
-    <p>Today cases: {{covid.todayCases}}</p>
-    <p>Deaths: {{covid.deaths}}</p>
-    <p>Total recovered: {{covid.recovered}}</p>
-    <p>Today recovered: {{covid.todayRecovered}}</p>
+    <table class="table global-table">
+      <tbody>
+        <tr>
+          <td>Cases:</td>
+          <td>{{covid.cases}}</td>
+        </tr>
+        <tr>
+          <td>Today cases:</td>
+          <td>{{covid.todayCases}}</td>
+        </tr>
+        <tr>
+          <td>Deaths:</td>
+          <td>{{covid.deaths}}</td>
+        </tr>
+        <tr>
+          <td>Total recovered:</td>
+          <td>{{covid.recovered}}</td>
+        </tr>
+        <tr>
+          <td>Today recovered:</td>
+          <td>{{covid.todayRecovered}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="data-container-continent">
-    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)">
-      <option></option>
+  <div class="data-container-continent" class="form-group mt-5">
+    <h2>Search for a continent</h2>
+    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)" class="form-control">
+      <option value="select-option">Select an option</option>
       <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value}}</option>
     </select>
     <div *ngIf="showContinentsReport">
-      <p>Total cases: {{continentsCovid.cases}}</p>
-      <p>Today cases: {{continentsCovid.todayCases}}</p>
-      <p>Deaths: {{continentsCovid.deaths}}</p>
-      <p>Total recovered: {{continentsCovid.recovered}}</p>
-      <p>Today recovered: {{continentsCovid.todayRecovered}}</p>
+      <table class="table global-table">
+        <tbody>
+          <tr>
+            <td>Cases:</td>
+            <td>{{continentsCovid.cases}}</td>
+          </tr>
+          <tr>
+            <td>Today cases:</td>
+            <td>{{continentsCovid.todayCases}}</td>
+          </tr>
+          <tr>
+            <td>Deaths:</td>
+            <td>{{continentsCovid.deaths}}</td>
+          </tr>
+          <tr>
+            <td>Total recovered:</td>
+            <td>{{continentsCovid.recovered}}</td>
+          </tr>
+          <tr>
+            <td>Today recovered:</td>
+            <td>{{continentsCovid.todayRecovered}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div *ngIf="showApiError">
       {{apiError.error.message}}
     </div>
   </div>
-</div>

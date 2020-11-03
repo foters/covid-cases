@@ -1,4 +1,3 @@
-import { IfStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
@@ -13,7 +12,7 @@ export class CovidComponent implements OnInit {
   continentsCovid: any;
   countryCovid: any;
 
-  apiError: Object;
+  apiError: any;
   showApiError: boolean;
   showContinentsReport: boolean;
   showCountryReport: boolean;
@@ -44,7 +43,7 @@ export class CovidComponent implements OnInit {
   }
 
   searchContinentCovid(event: any) {
-    if (event.target.value !== '') {
+    if (event.target.value !== 'select-option') {
       this.appService.getAllContinentCovid(event.target.value).subscribe(
         (res) => {
           this.continentsCovid = res;
@@ -52,8 +51,6 @@ export class CovidComponent implements OnInit {
           this.showApiError = false;
         },
         (err) => {
-          console.log(typeof err);
-
           this.showContinentsReport = false;
           this.apiError = err;
           err.status === 404 ? this.showApiError = true : false;
@@ -82,7 +79,4 @@ export class CovidComponent implements OnInit {
       this.showContinentsReport = false;
     }
   }
-
-
-
 }
