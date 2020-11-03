@@ -14,10 +14,13 @@ export interface UserLoginBody {
 export class AppService {
 
   baseUrl = 'https://disease.sh';
-  allCovid: any;
 
   constructor(private http: HttpClient) { }
   getAllCovid(): Observable<any> {
     return this.http.get(this.baseUrl + '/v3/covid-19/all');
+  }
+
+  getAllContinentCovid(continent: string) {
+    return this.http.get(this.baseUrl + '/v3/covid-19/continents/' + continent);
   }
 }

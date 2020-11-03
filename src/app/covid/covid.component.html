@@ -1,11 +1,27 @@
 <div class="data-container">
-  <p>Total cases: {{covid.cases}}</p>
-  <p>Today cases: {{covid.todayCases}}</p>
-  <p>Deaths: {{covid.deaths}}</p>
-  <p>Total recovered: {{covid.recovered}}</p>
-  <p>Today recovered: {{covid.todayRecovered}}</p>
-  <p>cases: {{covid.cases}}</p>
-  <p>cases: {{covid.cases}}</p>
-  <p>cases: {{covid.cases}}</p>
-  <p>cases: {{covid.cases}}</p>
+  <div class="data-container-global">
+    <h2>Global report</h2>
+    <p>Cases: {{covid.cases}}</p>
+    <p>Today cases: {{covid.todayCases}}</p>
+    <p>Deaths: {{covid.deaths}}</p>
+    <p>Total recovered: {{covid.recovered}}</p>
+    <p>Today recovered: {{covid.todayRecovered}}</p>
+  </div>
+
+  <div class="data-container-continent">
+    <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)">
+      <option></option>
+      <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value}}</option>
+    </select>
+    <div *ngIf="showContinentsReport">
+      <p>Total cases: {{covid.cases}}</p>
+      <p>Today cases: {{covid.todayCases}}</p>
+      <p>Deaths: {{covid.deaths}}</p>
+      <p>Total recovered: {{covid.recovered}}</p>
+      <p>Today recovered: {{covid.todayRecovered}}</p>
+    </div>
+    <div *ngIf="showApiError">
+      {{apiError.error.message}}
+    </div>
+  </div>
 </div>
