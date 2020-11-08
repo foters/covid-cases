@@ -1,20 +1,22 @@
 .data-container {
 
-  .continent-select {
-    box-shadow: none;
-    outline: none;
-    
-    &:focus {
-      border: 1px solid #ced4da;
-      outline: none;
-    }
-  }
-  
-  .table  {
+  .table {
     td {
       width: 100%;
     }
-  }  
+  }
+  
+  &-continent {
+    .continent-select {
+      box-shadow: none;
+      outline: none;
+      
+      &:focus {
+        border: 1px solid #ced4da;
+        outline: none;
+      }
+    }
+  }
 
   &-country {
     .search-country {
@@ -29,10 +31,19 @@
     }
   }
 
+  &-global {
+    h2 {
+      text-align: center;
+      .globe {
+        width: 80px;
+      }
+    }
+  }
+
   @media(min-width: 768px) {
     &-country,
     &-continent {
-      .col-md-5 {
+      .col-md-4 {
         padding-right: 0;
         margin-right: 0;
         position: absolute;
