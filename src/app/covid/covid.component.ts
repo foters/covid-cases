@@ -60,8 +60,6 @@ export class CovidComponent implements OnInit {
     if (event.target.value !== 'select-option') {
       this.appService.getAllContinentCovid(event.target.value).subscribe(
         (res: ICovid) => {
-          console.log('continent: ', res);
-
           this.continentsCovid = res;
           this.showContinentsReport = true;
           this.showApiError = false;
@@ -86,11 +84,9 @@ export class CovidComponent implements OnInit {
 
   searchCountryCovid() {
     if (this.countryCovidForm.get('inputCountry').value.length >= 3) {
-      this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value.tolowerCase()).subscribe(
+      this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value.toLowerCase()).subscribe(
         (res: ICovid) => {
           this.countryCovid = res;
-          console.log('country: ', res);
-
           this.showCountryReport = true;
           this.showApiError = false;
           if (this.countryCovid.criticalPerOneMillion < 3) {
