@@ -1,8 +1,30 @@
 .data-container {
 
+.card {
+  box-shadow: 0 0 8px 1px #00000061;
+}
+
   .table {
-    td {
-      width: 100%;
+    tr {
+    
+      td {
+        width: 100%;
+        font-size: 16px;
+        &:not(:first-child) {
+          font-weight: bold;
+        }
+        &.low-risk {
+          color: green;
+        }
+
+        &.medium-risk {
+          color: orange;
+        }
+
+        &.high-risk {
+          color: red;
+        }
+      }
     }
   }
   

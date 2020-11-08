@@ -83,6 +83,10 @@
                       <td>Today recovered:</td>
                       <td>{{continentsCovid.todayRecovered}}</td>
                     </tr>
+                    <tr>
+                      <td>Critical per one million:</td>
+                      <td [ngClass]="covidRiskContinent">{{continentsCovid.criticalPerOneMillion}}</td>
+                    </tr>
                   </tbody>
                 </table>
                 <div *ngIf="showApiError">
@@ -135,6 +139,10 @@
                   <tr>
                     <td>Today recovered:</td>
                     <td>{{countryCovid.todayRecovered}}</td>
+                  </tr>
+                  <tr>
+                    <td>Critical per one million:</td>
+                    <td [ngClass]="covidRiskCountry">{{countryCovid.criticalPerOneMillion}}</td>
                   </tr>
                 </tbody>
               </table>
