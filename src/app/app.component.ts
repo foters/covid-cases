@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { ICovid } from './covid/interfaces/covid';
 
@@ -8,7 +8,6 @@ import { ICovid } from './covid/interfaces/covid';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'covid-cases';
 
   covid: ICovid;
 
@@ -25,6 +24,5 @@ export class AppComponent implements OnInit {
       (err) => console.info(err)
     )
   }
-
 
 }

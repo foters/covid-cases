@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 import { ICovid } from './interfaces/covid';
 
@@ -13,6 +14,8 @@ export class CovidComponent implements OnInit {
   @Input() covid: ICovid;
   continentsCovid: ICovid;
   countryCovid: ICovid;
+
+  countryCovidForm: FormGroup;
 
   apiError: HttpErrorResponse;
   showApiError: boolean;
@@ -40,7 +43,12 @@ export class CovidComponent implements OnInit {
     },
   ];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private fb: FormBuilder) {
+    this.countryCovidForm = this.fb.group({
+      inputCountry: ['', Validators.required]
+    })
+  }
+
   ngOnInit() {
   }
 
@@ -63,9 +71,10 @@ export class CovidComponent implements OnInit {
     }
   }
 
-  searchCountryCovid(event: any) {
-    if (event.target.value !== '') {
-      this.appService.getAllCountryCovid(event.target.value).subscribe(
+  searchCountryCovid() {
+    console.log(this.countryCovidForm.get('inputCountry').value);
+    if (this.countryCovidForm.get('inputCountry').value.length >= 3) {
+      this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value).subscribe(
         (res: ICovid) => {
           this.countryCovid = res;
           this.showCountryReport = true;

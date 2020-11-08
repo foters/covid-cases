@@ -1,9 +1,18 @@
-.continent-select {
-  box-shadow: none;
-  outline: none;
+.data-container {
 
-  &:focus {
-    border: 1px solid #ced4da;
+  .continent-select {
+    box-shadow: none;
     outline: none;
+    
+    &:focus {
+      border: 1px solid #ced4da;
+      outline: none;
+    }
   }
-}
+  
+  .table  {
+    td {
+      width: 100%;
+    }
+  }  
+}  

@@ -27,4 +27,8 @@ export class AppService {
   getAllCountryCovid(country: string) {
     return this.http.get(this.baseUrl + '/v3/covid-19/countries/' + country);
   }
+
+  getAllCountries() {
+    return this.http.get('https://api.first.org/data/v1/countries');
+  }
 }
