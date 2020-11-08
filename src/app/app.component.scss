@@ -1,9 +1,13 @@
 .app-container {
+  
   .main-title {
+    margin-top: 8px;
     &-image {
       @media(max-width: 767px) {
         justify-content: center;
         display: flex;
+        height: 200px;
+        width: 200px;
       }
 
       .virus-img {
