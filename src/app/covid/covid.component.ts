@@ -46,6 +46,7 @@ export class CovidComponent implements OnInit {
     // },
   ];
 
+  allCountries = [];
 
   constructor(private appService: AppService, private fb: FormBuilder) {
     this.countryCovidForm = this.fb.group({
@@ -54,6 +55,18 @@ export class CovidComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.getAllCountries().subscribe(
+      res => {
+        for (let countryCodes of res.data) {
+          Object.keys(countryCodes).map(code => {
+            let singleCode = res.data[code];
+            this.allCountries.push(singleCode.country)
+            console.log('singlecode: ', singleCode.country);
+          });
+        }
+      },
+      err => console.log(err)
+    )
   }
 
   searchContinentCovid(event: any) {
