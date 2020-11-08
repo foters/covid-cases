@@ -31,97 +31,105 @@
     </div>
   </div>
 
-  <div class="data-container-continent" class="mt-5">
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <h2>Search for continent</h2>
-      </div>
-      <div class="col-12 col-md-3">
-        <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)"
-          class="form-control continent-select mb-2">
-          <option value="select-option">Select an option</option>
-          <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value | titlecase}}
-          </option>
-        </select>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="data-container-continent mt-5">
+        <div class="row">
+          <div class="col-12 col-md-auto">
+            <h2>Search for continent</h2>
+          </div>
+          <div class="col-12 col-md-5">
+            <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)"
+              class="form-control continent-select mb-2">
+              <option value="select-option">Select an option</option>
+              <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value | titlecase}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div *ngIf="showContinentsReport" class="row">
+          <div class="col">
+            <table class="table continents-table">
+              <tbody>
+                <tr>
+                  <td>Cases:</td>
+                  <td>{{continentsCovid.cases}}</td>
+                </tr>
+                <tr>
+                  <td>Today cases:</td>
+                  <td>{{continentsCovid.todayCases}}</td>
+                </tr>
+                <tr>
+                  <td>Deaths:</td>
+                  <td>{{continentsCovid.deaths}}</td>
+                </tr>
+                <tr>
+                  <td>Total recovered:</td>
+                  <td>{{continentsCovid.recovered}}</td>
+                </tr>
+                <tr>
+                  <td>Today recovered:</td>
+                  <td>{{continentsCovid.todayRecovered}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div *ngIf="showApiError">
+              {{apiError.error.message}}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div *ngIf="showContinentsReport" class="row">
-      <div class="col">
-        <table class="table continents-table">
-          <tbody>
-            <tr>
-              <td>Cases:</td>
-              <td>{{continentsCovid.cases}}</td>
-            </tr>
-            <tr>
-              <td>Today cases:</td>
-              <td>{{continentsCovid.todayCases}}</td>
-            </tr>
-            <tr>
-              <td>Deaths:</td>
-              <td>{{continentsCovid.deaths}}</td>
-            </tr>
-            <tr>
-              <td>Total recovered:</td>
-              <td>{{continentsCovid.recovered}}</td>
-            </tr>
-            <tr>
-              <td>Today recovered:</td>
-              <td>{{continentsCovid.todayRecovered}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div *ngIf="showApiError">
-          {{apiError.error.message}}
+    <div class="col-12 col-md-6">
+      <div class="data-container-country mt-5">
+        <div class="row">
+          <div class="col-12 col-md-auto">
+            <h2>Search for country</h2>
+          </div>
+          <div class="col-12 col-md-5">
+            <form (ngSubmit)="searchCountryCovid()" [formGroup]="countryCovidForm" class="search-country">
+              <input name="country-covid" id="country-covid"
+                class="form-control mb-2 search-country-input" formControlName="inputCountry" placeholder="italy, peru, usa..." />
+                <button type="submit" class="search-country-button">
+                  <fa-icon [icon]="faSearch"></fa-icon>
+                </button>
+            </form>
+          </div>
+        </div>
+        <div *ngIf="showCountryReport" class="row">
+          <div class="col">
+            <table class="table country-table">
+              <tbody>
+                <tr>
+                  <td>Cases:</td>
+                  <td>{{countryCovid.cases}}</td>
+                </tr>
+                <tr>
+                  <td>Today cases:</td>
+                  <td>{{countryCovid.todayCases}}</td>
+                </tr>
+                <tr>
+                  <td>Deaths:</td>
+                  <td>{{countryCovid.deaths}}</td>
+                </tr>
+                <tr>
+                  <td>Total recovered:</td>
+                  <td>{{countryCovid.recovered}}</td>
+                </tr>
+                <tr>
+                  <td>Today recovered:</td>
+                  <td>{{countryCovid.todayRecovered}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div *ngIf="showApiError">
+              {{apiError.error.message}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="data-container-country" class="mt-5">
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <h2>Search for country</h2>
-      </div>
-      <div class="col-12 col-md-3">
-        <form (ngSubmit)="searchCountryCovid()" [formGroup]="countryCovidForm">
-          <input name="countries-covid" id="country-covid"
-            class="form-control mb-2" formControlName="inputCountry" />
-            <button type="submit">test</button>
-        </form>
-      </div>
-    </div>
-    <div *ngIf="showCountryReport" class="row">
-      <div class="col">
-        <table class="table continents-table">
-          <tbody>
-            <tr>
-              <td>Cases:</td>
-              <td>{{countryCovid.cases}}</td>
-            </tr>
-            <tr>
-              <td>Today cases:</td>
-              <td>{{countryCovid.todayCases}}</td>
-            </tr>
-            <tr>
-              <td>Deaths:</td>
-              <td>{{countryCovid.deaths}}</td>
-            </tr>
-            <tr>
-              <td>Total recovered:</td>
-              <td>{{countryCovid.recovered}}</td>
-            </tr>
-            <tr>
-              <td>Today recovered:</td>
-              <td>{{countryCovid.todayRecovered}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div *ngIf="showApiError">
-          {{apiError.error.message}}
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>
