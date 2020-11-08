@@ -20,15 +20,15 @@ export class AppService {
     return this.http.get(this.baseUrl + '/v3/covid-19/all');
   }
 
-  getAllContinentCovid(continent: string) {
+  getAllContinentCovid(continent: string): Observable<any> {
     return this.http.get(this.baseUrl + '/v3/covid-19/continents/' + continent);
   }
 
-  getAllCountryCovid(country: string) {
+  getAllCountryCovid(country: string): Observable<any> {
     return this.http.get(this.baseUrl + '/v3/covid-19/countries/' + country);
   }
 
-  getAllCountries() {
+  getAllCountries(): Observable<any> {
     return this.http.get('https://api.first.org/data/v1/countries');
   }
 }
