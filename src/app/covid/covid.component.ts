@@ -86,7 +86,7 @@ export class CovidComponent implements OnInit {
 
   searchCountryCovid() {
     if (this.countryCovidForm.get('inputCountry').value.length >= 3) {
-      this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value).subscribe(
+      this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value.tolowerCase()).subscribe(
         (res: ICovid) => {
           this.countryCovid = res;
           console.log('country: ', res);
