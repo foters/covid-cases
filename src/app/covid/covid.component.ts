@@ -27,21 +27,21 @@ export class CovidComponent implements OnInit {
     {
       value: 'africa',
     },
-    {
-      value: 'america',
-    },
-    {
-      value: 'antarctica',
-    },
+    // {
+    //   value: 'america',
+    // },
+    // {
+    //   value: 'antarctica',
+    // },
     {
       value: 'asia',
     },
     {
       value: 'europe',
     },
-    {
-      value: 'oceania',
-    },
+    // {
+    //   value: 'oceania',
+    // },
   ];
 
   faSearch = faSearch;
@@ -75,7 +75,6 @@ export class CovidComponent implements OnInit {
   }
 
   searchCountryCovid() {
-    console.log(this.countryCovidForm.get('inputCountry').value);
     if (this.countryCovidForm.get('inputCountry').value.length >= 3) {
       this.appService.getAllCountryCovid(this.countryCovidForm.get('inputCountry').value).subscribe(
         (res: ICovid) => {

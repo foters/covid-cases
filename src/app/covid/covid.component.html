@@ -90,7 +90,7 @@
             <form (ngSubmit)="searchCountryCovid()" [formGroup]="countryCovidForm" class="search-country">
               <input name="country-covid" id="country-covid"
                 class="form-control mb-2 search-country-input" formControlName="inputCountry" placeholder="italy, peru, usa..." />
-                <button type="submit" class="search-country-button">
+                <button type="submit" class="search-country-button" [disabled]="countryCovidForm.get('inputCountry').value.length<3">
                   <fa-icon [icon]="faSearch"></fa-icon>
                 </button>
             </form>
