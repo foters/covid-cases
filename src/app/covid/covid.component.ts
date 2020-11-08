@@ -3,7 +3,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 import { ICovid } from './interfaces/covid';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-covid',
@@ -47,7 +46,6 @@ export class CovidComponent implements OnInit {
     // },
   ];
 
-  faSearch = faSearch;
 
   constructor(private appService: AppService, private fb: FormBuilder) {
     this.countryCovidForm = this.fb.group({

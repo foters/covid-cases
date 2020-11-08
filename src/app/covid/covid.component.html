@@ -111,7 +111,8 @@
                 <input name="country-covid" id="country-covid"
                   class="form-control mb-2 search-country-input" formControlName="inputCountry" placeholder="italy, peru, usa..." />
                   <button type="submit" class="search-country-button" [disabled]="countryCovidForm.get('inputCountry').value.length<3">
-                    <fa-icon [icon]="faSearch"></fa-icon>
+                    <!-- <fa-icon [icon]="faSearch"></fa-icon> -->
+                    <span><img src="../../assets/imgs/search.svg" alt="search icon"></span>
                   </button>
               </form>
             </div>
