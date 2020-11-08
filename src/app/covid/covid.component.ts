@@ -55,6 +55,7 @@ export class CovidComponent implements OnInit {
   }
 
   ngOnInit() {
+    /*
     // LISTA DI COUNTRY NON COMPLETA, NELL'API MANCANO STATI COME ITALIA, SPAGNA ECC
     this.appService.getAllCountries().subscribe(
       res => {
@@ -68,7 +69,7 @@ export class CovidComponent implements OnInit {
         }
       },
       err => console.log(err)
-    )
+    )*/
   }
 
   searchContinentCovid(event: any) {
