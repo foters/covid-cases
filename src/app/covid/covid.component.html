@@ -41,13 +41,13 @@
       <div class="card mt-5">
         <div class="card-body">
           <div class="data-container-continent">
-            <div class="row">
-              <div class="col-12 col-md-auto">
+            <div class="row data-container-continent-fields">
+              <div class="col-12 col-md-auto data-container-continent-fields-title">
                 <h2>Search by continent</h2>
               </div>
-              <div class="col-12 col-md-4">
+              <div class="col-12 col-md-4 data-container-continent-fields-select">
                 <select name="continent-covid" id="continent-covid" (change)="searchContinentCovid($event)"
-                  class="form-control continent-select mb-2">
+                  class="form-control continent-select">
                   <option value="select-option">Select option</option>
                   <option [value]="continent.value" *ngFor="let continent of continents">{{continent.value | titlecase}}
                   </option>
@@ -97,11 +97,11 @@
       <div class="card mt-5">
         <div class="card-body">
           <div class="data-container-country">
-          <div class="row">
-            <div class="col-12 col-md-auto">
+          <div class="row data-container-country-fields">
+            <div class="col-12 col-md-auto data-container-country-fields-title">
               <h2>Search by country</h2>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 data-container-country-fields-input">
               <form (ngSubmit)="searchCountryCovid()" [formGroup]="countryCovidForm" class="search-country">
                 <input name="country-covid" id="country-covid"
                   class="form-control mb-2 search-country-input" formControlName="inputCountry" placeholder="italy, peru, usa..." />

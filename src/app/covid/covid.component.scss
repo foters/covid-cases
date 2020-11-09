@@ -35,39 +35,56 @@
   }
   
   &-continent {
-    .continent-select {
-      box-shadow: none;
-      position: relative;
-      top: 1px;
-      outline: none;
-      border-color: #cdc9c3;
-      background-color: #fbf7f0;
-      
-      &:focus {
-        border: 1px solid #ced4da;
+    &-fields {
+      padding: 8px 0;
+      .continent-select {
+        box-shadow: none;
+        position: relative;
+        top: 1px;
         outline: none;
+        border-color: #cdc9c3;
+        background-color: #fbf7f0;
+        
+        &:focus {
+          border: 1px solid #ced4da;
+          outline: none;
+        }
+
+      }
+      &-title {
+        h2 {
+          margin-bottom: 0;
+        }
       }
     }
   }
 
   &-country {
-    .search-country {
-      &-input {
-        background-color: #fbf7f0;
-        border-color: #cdc9c3;
-      }
-      &-button {
-        outline: none;
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        border: none;
-        background: none;
-        img {
-          width: 16px;
+    &-fields {
+      padding: 8px 0;
+      .search-country {
+        &-input {
+          background-color: #fbf7f0;
+          border-color: #cdc9c3;
         }
-        @media(max-width: 767px) {
-          right: 16px;
+        &-button {
+          outline: none;
+          position: absolute;
+          top: 4px;
+          right: 4px;
+          border: none;
+          background: none;
+          img {
+            width: 16px;
+          }
+          @media(max-width: 767px) {
+            right: 16px;
+          }
+        }
+      }
+      &-title {
+        h2 {
+          margin-bottom: 0;
         }
       }
     }
