@@ -11,7 +11,7 @@ import { ICovid } from './interfaces/covid';
 })
 export class CovidComponent implements OnInit {
 
-  @Input() covid: ICovid;
+  @Input() gloablCovid: ICovid;
   continentsCovid: ICovid;
   countryCovid: ICovid;
 

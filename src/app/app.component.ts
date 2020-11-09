@@ -11,7 +11,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class AppComponent implements OnInit {
 
-  covid: ICovid;
+  gloablCovid: ICovid;
 
 
   constructor(private appService: AppService, private spinner: NgxSpinnerService) { }
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   getData() {
     this.appService.getAllCovid().subscribe(
       (res: ICovid) => {
-        this.covid = res;
+        this.gloablCovid = res;
         this.spinner.hide();
       },
       (err: HttpErrorResponse) => console.info(err)
