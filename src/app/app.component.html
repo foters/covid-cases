@@ -2,19 +2,15 @@
 <div class="app-container">
   <div class="container">
     <div class="row main-title">
-      <div class="col-12 col-md-auto main-title-image">
+      <div class="col-12 col-lg-auto main-title-image">
         <img src="../assets/imgs/virus.svg" alt="virus image" class="virus-img">
       </div>
       <div class="col main-title-text">
         <h1>COVID-19 WORLD SITUATION</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div *ngIf="covid">
-          <app-covid [covid]="covid"></app-covid>
-        </div>
-      </div>
+    <div *ngIf="covid">
+      <app-covid [covid]="covid"></app-covid>
     </div>
   </div>
 </div>
