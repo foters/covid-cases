@@ -5,8 +5,8 @@
         <div class="row">
           <div class="col-12 col-lg-8 offset-lg-2">
             <div class="card">
-                  <h2>Global report <img src="assets/imgs/globe-spin.gif" alt="rotating globe" class="globe"></h2>
-                  <table class="table global-table">
+              <h2>Global report <img src="assets/imgs/globe-spin.gif" alt="rotating globe" class="globe"></h2>
+              <table class="table global-table">
                     <tbody>
                       <tr>
                         <td>Cases:</td>
@@ -21,7 +21,11 @@
                         <td>{{gloablCovid.deaths}}</td>
                       </tr>
                       <tr>
-                        <td>Total recovered:</td>
+                        <td>Today deaths:</td>
+                        <td>{{gloablCovid.todayDeaths}}</td>
+                      </tr>
+                      <tr>
+                        <td>Recovered:</td>
                         <td>{{gloablCovid.recovered}}</td>
                       </tr>
                       <tr>
@@ -29,7 +33,7 @@
                         <td>{{gloablCovid.todayRecovered}}</td>
                       </tr>
                     </tbody>
-                  </table>
+              </table>
             </div>
           </div>
         </div>
@@ -71,7 +75,11 @@
                       <td>{{continentsCovid.deaths}}</td>
                     </tr>
                     <tr>
-                      <td>Total recovered:</td>
+                      <td>Today deaths:</td>
+                      <td>{{continentsCovid.todayDeaths}}</td>
+                    </tr>
+                    <tr>
+                      <td>Recovered:</td>
                       <td>{{continentsCovid.recovered}}</td>
                     </tr>
                     <tr>
@@ -128,7 +136,11 @@
                     <td>{{countryCovid.deaths}}</td>
                   </tr>
                   <tr>
-                    <td>Total recovered:</td>
+                    <td>Today deaths:</td>
+                    <td>{{countryCovid.todayDeaths}}</td>
+                  </tr>
+                  <tr>
+                    <td>Recovered:</td>
                     <td>{{countryCovid.recovered}}</td>
                   </tr>
                   <tr>
