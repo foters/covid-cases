@@ -21,6 +21,9 @@
       
       h1 {
         font-size: 3.1rem;
+        @media(max-width: 768px) {
+          text-align: center;
+        }
       }
       
       @media(max-width: 1024px) {
