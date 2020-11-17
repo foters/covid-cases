@@ -79,13 +79,13 @@ export class CovidComponent implements OnInit {
           this.continentsCovid = res;
           this.showContinentsReport = true;
           this.showApiError = false;
-          if (this.continentsCovid.criticalPerOneMillion < 3) {
+          /* if (this.continentsCovid.criticalPerOneMillion < 3) {
             this.covidRiskContinent = 'low-risk';
           } else if (this.continentsCovid.criticalPerOneMillion >= 3 && this.continentsCovid.criticalPerOneMillion < 10) {
             this.covidRiskContinent = 'medium-risk';
           } else if (this.continentsCovid.criticalPerOneMillion >= 10) {
             this.covidRiskContinent = 'high-risk';
-          }
+          }*/
         },
         (err: HttpErrorResponse) => {
           this.showContinentsReport = false;
@@ -105,13 +105,13 @@ export class CovidComponent implements OnInit {
           this.countryCovid = res;
           this.showCountryReport = true;
           this.showApiError = false;
-          if (this.countryCovid.criticalPerOneMillion < 3) {
+          /*if (this.countryCovid.criticalPerOneMillion < 3) {
             this.covidRiskCountry = 'low-risk';
           } else if (this.countryCovid.criticalPerOneMillion >= 3 && this.countryCovid.criticalPerOneMillion < 10) {
             this.covidRiskCountry = 'medium-risk';
           } else if (this.countryCovid.criticalPerOneMillion >= 10) {
             this.covidRiskCountry = 'high-risk';
-          }
+          }*/
         },
         (err: HttpErrorResponse) => {
           this.showCountryReport = false;
